@@ -4799,7 +4799,6 @@ details.toc[open] >div.body section .header+.doc_tree {
   font-weight: 500;
 }
 .widget-wrapper.post-list .widget-body a {
-  line-height: 1;
   font-size: 0.875rem;
   padding: 8px 16px;
   display: block;
