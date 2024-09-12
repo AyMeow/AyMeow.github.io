@@ -4827,6 +4827,7 @@ details.toc[open] >div.body section .header+.doc_tree {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  overflow: visible;
 }
 .widget-wrapper.post-list .widget-body a svg {
   flex-shrink: 0;
