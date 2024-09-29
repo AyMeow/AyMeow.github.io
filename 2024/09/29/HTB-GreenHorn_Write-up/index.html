@@ -48,7 +48,7 @@
 <meta property="og:image" content="https://pic.imgdb.cn/item/66f94e85f21886ccc0c3a3c4.png">
 <meta property="og:image" content="https://pic.imgdb.cn/item/66f94e85f21886ccc0c3a399.jpg">
 <meta property="article:published_time" content="2024-09-29T13:00:00.000Z">
-<meta property="article:modified_time" content="2024-09-29T13:00:46.383Z">
+<meta property="article:modified_time" content="2024-09-29T13:05:49.062Z">
 <meta property="article:author" content="AyMeow">
 <meta property="article:tag" content="靶场复现">
 <meta name="twitter:card" content="summary_large_image">
@@ -100,7 +100,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/">靶场复现</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/HTB/">HTB</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-29T13:00:00.000Z">2024-09-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-09-29T13:00:46.383Z">2024-09-29</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-29T13:00:00.000Z">2024-09-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-09-29T13:05:49.062Z">2024-09-29</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -190,7 +190,7 @@
 <p>直接把PDF拉到本机查看：</p>
 <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f94e4ff21886ccc0c370c6.jpg" data-fancybox="true" alt="GreenHorn-18" />
 
-<p>密码被马赛克了，好好好，看了Write-up才知道是复原马赛克；这整的跟打CTF一样…首先用pdfimages命令把pdf处理一下，然后用Depix还原即可：</p>
+<p>密码被马赛克了，好好好，看了Write-up才知道是复原马赛克；这整的跟打CTF一样…首先用pdfimages命令把pdf处理一下，然后用<a target="_blank" rel="noopener" href="https://github.com/spipm/Depix">Depix</a>还原即可：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装pdfimages</span></span><br><span class="line">apt install poppler-utils</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取Depix</span></span><br><span class="line">git clone https://github.com/spipm/Depix.git</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">处理PDF，后面那个参数随意即可</span></span><br><span class="line">pdfimage -j &#x27;Using OpenVAS.pdf&#x27; ay</span><br></pre></td></tr></table></figure>
 
 <p>处理完后会产生一个<code>ay-000.ppm</code>的文件，把它丢到刚刚克隆的Depix的根目录下：</p>
