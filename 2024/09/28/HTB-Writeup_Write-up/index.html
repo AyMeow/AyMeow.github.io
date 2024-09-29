@@ -48,7 +48,7 @@
 <meta property="og:image" content="https://pic.imgdb.cn/item/66f819dbf21886ccc09c9a24.jpg">
 <meta property="og:image" content="https://pic.imgdb.cn/item/66f81a16f21886ccc09d1f09.jpg">
 <meta property="article:published_time" content="2024-09-28T14:50:00.000Z">
-<meta property="article:modified_time" content="2024-09-28T15:01:11.022Z">
+<meta property="article:modified_time" content="2024-09-28T15:06:13.004Z">
 <meta property="article:author" content="AyMeow">
 <meta property="article:tag" content="靶场复现">
 <meta name="twitter:card" content="summary_large_image">
@@ -87,7 +87,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/09/27/HTB-Compiled_Write-up/"><span class="title">HTB-Compiled_Write-up</span></a><a class="item title" href="/2024/09/28/HTB-Writeup_Write-up/"><span class="title">HTB-Writeup_Write-up</span></a><a class="item title" href="/2024/09/20/HTB-Editorial_Write-up/"><span class="title">HTB-Editorial_Write-up</span></a><a class="item title" href="/2024/09/12/HTB-Blurry_Write-up/"><span class="title">HTB-Blurry_Write-up</span></a><a class="item title" href="/2024/09/18/HTB-BoardLight_Write-up/"><span class="title">HTB-BoardLight_Write-up</span></a><a class="item title" href="/2024/09/19/HTB-Permx_Write-up/"><span class="title">HTB-Permx_Write-up</span></a><a class="item title" href="/2024/09/24/HTB-MonitorsThree_Write-up/"><span class="title">HTB-MonitorsThree_Write-up</span></a><a class="item title" href="/2024/04/24/Vulntarget-B-Write-up/"><span class="title">Vulntarget-B_Write-up</span></a><a class="item title" href="/2024/04/26/VulnHub-DarkHole_2-Write-up/"><span class="title">VulnHub-DarkHole-2_Write-up</span></a><a class="item title" href="/2024/04/29/VulnHub-SickOS1.1-Write-up/"><span class="title">VulnHub-SickOS1.1_Write-up</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/09/29/HTB-GreenHorn_Write-up/"><span class="title">HTB-GreenHorn_Write-up</span></a><a class="item title" href="/2024/09/28/HTB-Writeup_Write-up/"><span class="title">HTB-Writeup_Write-up</span></a><a class="item title" href="/2024/09/27/HTB-Compiled_Write-up/"><span class="title">HTB-Compiled_Write-up</span></a><a class="item title" href="/2024/09/20/HTB-Editorial_Write-up/"><span class="title">HTB-Editorial_Write-up</span></a><a class="item title" href="/2024/09/12/HTB-Blurry_Write-up/"><span class="title">HTB-Blurry_Write-up</span></a><a class="item title" href="/2024/09/18/HTB-BoardLight_Write-up/"><span class="title">HTB-BoardLight_Write-up</span></a><a class="item title" href="/2024/09/19/HTB-Permx_Write-up/"><span class="title">HTB-Permx_Write-up</span></a><a class="item title" href="/2024/09/24/HTB-MonitorsThree_Write-up/"><span class="title">HTB-MonitorsThree_Write-up</span></a><a class="item title" href="/2024/04/24/Vulntarget-B-Write-up/"><span class="title">Vulntarget-B_Write-up</span></a><a class="item title" href="/2024/04/26/VulnHub-DarkHole_2-Write-up/"><span class="title">VulnHub-DarkHole-2_Write-up</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -100,7 +100,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/">靶场复现</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/HTB/">HTB</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-28T14:50:00.000Z">2024-09-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-09-28T15:01:11.022Z">2024-09-28</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-28T14:50:00.000Z">2024-09-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-09-28T15:06:13.004Z">2024-09-28</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -164,7 +164,7 @@
 <p>稍等一会就把用户、MD5和盐值都注出来了，那既然盐值和MD5都已知了，用Hashcat爆破一下吧：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;62def4866937f08cc13bab43bb14e6f7:5a599ef579066807&#x27; &gt; hash</span><br><span class="line">hashcat -a 0 -m 20 hash /usr/local/Dict/rockyou.txt</span><br></pre></td></tr></table></figure>
 
-<p>我这里已经破解过了，使用–show来显示结果：</p>
+<p>我这里已经破解过了，使用<code>--show</code>来显示结果：</p>
 <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66f8199ff21886ccc09c5fbd.jpg" data-fancybox="true" alt="Writeup-12" />
 
 <p>账号密码都有了，尝试SSH连接吧：</p>
@@ -223,7 +223,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/09/27/HTB-Compiled_Write-up/">HTB-Compiled_Write-up</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/09/29/HTB-GreenHorn_Write-up/">HTB-GreenHorn_Write-up</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/09/27/HTB-Compiled_Write-up/">HTB-Compiled_Write-up</a></div></section></div>
 
 
 
