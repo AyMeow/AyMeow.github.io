@@ -54,7 +54,7 @@
 <meta property="og:image" content="https://pic.imgdb.cn/item/66fba2f7f21886ccc0c2f7f8.jpg">
 <meta property="og:image" content="https://pic.imgdb.cn/item/66fba2f7f21886ccc0c2f810.jpg">
 <meta property="article:published_time" content="2024-10-01T07:20:00.000Z">
-<meta property="article:modified_time" content="2024-10-01T07:28:00.414Z">
+<meta property="article:modified_time" content="2024-10-01T09:19:19.232Z">
 <meta property="article:author" content="AyMeow">
 <meta property="article:tag" content="靶场复现">
 <meta property="article:tag" content="Sqlpad">
@@ -107,7 +107,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/">靶场复现</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E9%9D%B6%E5%9C%BA%E5%A4%8D%E7%8E%B0/HTB/">HTB</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-10-01T07:20:00.000Z">2024-10-01</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-01T07:28:00.414Z">2024-10-01</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-10-01T07:20:00.000Z">2024-10-01</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-01T09:19:19.232Z">2024-10-01</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -205,7 +205,7 @@
 <p>等了一会没反应，再加两个端口试试，转接步骤同上；就会发现有访问进来了：</p>
 <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66fba299f21886ccc0c28916.jpg" data-fancybox="true" alt="Sightless-19" />
 
-<p>点击inspect会弹出Chrome的DevTools，点击保留日志，然后审计index.php的载荷就能发现账号密码；这里还需要注意一个事情，靶机的3306端口一定要转接过来，否则抓不到载荷；我这把3306映射到33066了：</p>
+<p>点击inspect会弹出Chrome的DevTools，点击保留日志，然后审计index.php的载荷就能发现账号密码；这里还需要注意一个事情，只有状态码为302的index.php才有载荷，所以需要等一等：</p>
 <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://pic.imgdb.cn/item/66fba2ccf21886ccc0c2c096.jpg" data-fancybox="true" alt="Sightless-20" />
 
 <p>有了密码直接登录即可：</p>
